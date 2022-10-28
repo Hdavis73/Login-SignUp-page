@@ -31,7 +31,7 @@ h1 {
     color: #340863;
 }
 
-.signup-wrap {
+.signin-wrap {
     display: flex;
     flex-direction: column;
     align-items: space-between;
@@ -52,7 +52,7 @@ h1 {
     border-radius: 5px;
 }
 
-.signup-btn{
+.signin-btn{
     width: 100px;
     font-size: 1.4rem;
     padding: 7px;
@@ -63,6 +63,20 @@ h1 {
     color:#f3f1ff;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
+    transition: all ease-in-out 150ms
+}
+
+.signin-btn.left {
+    transform: translate(-100px)
+}
+
+.signin-btn.toCenter {
+    transform: translate(0px)
+}
+
+.signin-btn.right {
+    transform: translate(100px)
 }
 
 
