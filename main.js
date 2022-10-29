@@ -7,6 +7,10 @@ seePassword.addEventListener('click', () => {
     const passwordType = passwordInput.type === "password" ? "text" : "password"
 
     passwordInput.type = passwordType
+    if(!seePassword.classList.contains('active')) seePassword.classList.add('active')
+    else{
+        seePassword.classList.remove('active')
+    }
 })
 
 signInBtn.addEventListener('click', () => {
