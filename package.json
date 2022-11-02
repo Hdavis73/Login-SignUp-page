@@ -1,0 +1,23 @@
+{
+  "name": "moving-sign-in",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hdavis73/moving-submit-button.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hdavis73/moving-submit-button/issues"
+  },
+  "homepage": "https://github.com/Hdavis73/moving-submit-button#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
