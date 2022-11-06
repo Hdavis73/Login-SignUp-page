@@ -1,1 +1,1 @@
-
+This is a typical Login/Signup page I am building to familiarize myself with using MongoDB Atlas. The project when finished will have a functioning SignUp form, change password form, and Login form which will just take the user to a profile information page.
