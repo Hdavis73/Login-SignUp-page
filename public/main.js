@@ -14,7 +14,7 @@ seePassword.addEventListener('click', () => {
 })
 
 signInBtn.addEventListener('click', () => {
-
+    incorrectPassword()
 })
 
 function incorrectPassword() {
