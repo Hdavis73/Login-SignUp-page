@@ -2,6 +2,7 @@
 const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
+const NewUser = require('./models/userInfo')
 
 const dbUrl = 'mongodb+srv://Hdavis73:Heather1@logininfo.zv7mcrt.mongodb.net/?retryWrites=true&w=majority'
 
@@ -22,4 +23,13 @@ app.get('/', (req,res) => {
 
 app.get('/signup', (req,res) => {
     res.render('SignUp')
+})
+
+app.post('/userData', (req,res) => {
+    const user = new NewUser(req.body)
+
+    user.save()
+        .then(data => {
+            res.redirect('/')
+        })
 })

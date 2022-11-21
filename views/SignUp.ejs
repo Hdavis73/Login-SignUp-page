@@ -6,19 +6,19 @@
   <section class="form-wrap">
     <h1>Sign Up</h1>
 
-    <form class="signup-form form" action="">
-      <input type="text" class="first-name" placeholder="First Name" />
+    <form class="signup-form form" action="/userData" method="post">
+      <input type="text" class="first-name" placeholder="First Name" name="firstName" />
 
-      <input type="text" class="last-name" placeholder="Last Name" />
+      <input type="text" class="last-name" placeholder="Last Name" name="lastName"/>
 
-      <input type="text" class="username" placeholder="Username" />
+      <input type="text" class="username" placeholder="Username" name="username"/>
 
       <div class="password-wrap new-password">
-        <input type="password" class="password-input" placeholder="Password" />
+        <input type="password" class="password-input" placeholder="Password" name="password"/>
         <button type="button" class="see-password-btn">👀</button>
       </div>
 
-      <button type="button" class="signup-btn center submit">Submit</button>
+      <button class="signup-btn center submit">Submit</button>
     </form>
   </section>
 

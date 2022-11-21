@@ -20,3 +20,6 @@ const userInfoSchema = new Schema({
         required: true
     }
 })
+
+const NewUser = mongoose.model('user',userInfoSchema)
+module.exports = NewUser
