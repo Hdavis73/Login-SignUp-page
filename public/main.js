@@ -1,4 +1,4 @@
-const signInBtn = document.querySelector('.signin-btn')
+let submitBtn = document.querySelector('.signin-btn')
 const seePassword = document.querySelector('.see-password-btn')
 
 seePassword.addEventListener('click', () => {
@@ -13,12 +13,12 @@ seePassword.addEventListener('click', () => {
     }
 })
 
-signInBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', () => {
     incorrectPassword()
 })
 
 function incorrectPassword() {
-    const btnClassList = signInBtn.classList
+    const btnClassList = submitBtn.classList
 
     if(btnClassList.contains('center')) {
         btnClassList.remove('center') 

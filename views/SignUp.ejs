@@ -2,7 +2,7 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
+<body id="signUp">
   <section class="form-wrap">
     <h1>Sign Up</h1>
 
@@ -11,7 +11,7 @@
 
       <input type="text" class="last-name" placeholder="Last Name" />
 
-      <input type="email" class="email" placeholder="Email" />
+      <input type="text" class="username" placeholder="Username" />
 
       <div class="password-wrap new-password">
         <input type="password" class="password-input" placeholder="Password" />
@@ -21,4 +21,6 @@
       <button type="button" class="signup-btn center submit">Submit</button>
     </form>
   </section>
+
+  <script src="main.js"></script>
 </body>
