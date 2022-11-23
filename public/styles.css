@@ -90,4 +90,21 @@ form {
     transform: translate(100px)
 }
 
+.create-account {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    background-color: #f3f1ff;
+    color: #340863;
+    border: 2px solid #340863;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+.create-account:hover {
+    background-color:#340863;
+    color:#f3f1ff;
+    transition: all ease-out 100ms;
+}
+
 
