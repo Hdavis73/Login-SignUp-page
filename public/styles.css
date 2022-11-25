@@ -90,7 +90,7 @@ form {
     transform: translate(100px)
 }
 
-.create-account {
+.relocate {
     position: absolute;
     right: 20px;
     top: 0px;
@@ -101,7 +101,7 @@ form {
     padding: 5px;
 }
 
-.create-account:hover {
+.relocate:hover {
     background-color:#340863;
     color:#f3f1ff;
     transition: all ease-out 100ms;
