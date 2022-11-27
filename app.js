@@ -27,13 +27,18 @@ app.get('/signup', (req,res) => {
 
 app.post('/userData', (req,res) => {
 //stackoverflow test
-    const username = req.body.username
+    const {firstName,lastName,username,password} = req.body
 
-    NewUser.findOne({username:username})
-        .then((savedUser) => {
-            if(savedUser) res.render('userAlreadyExists')
-            else createUser()
+    if(!firstName || !lastName || !username || !password) res.render('fillAllInputsErr')
+    else checkExistingUsers()
+
+    function checkExistingUsers(){
+        NewUser.findOne({username:username})
+         .then((savedUser) => {
+                if(savedUser) res.render('userAlreadyExistsErr')
+                else createUser()
         })
+    }
 //test end
     function createUser() {
         const user = new NewUser(req.body)

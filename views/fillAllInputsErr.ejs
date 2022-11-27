@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<%- include('./partials/head.ejs') %>
+
+<body id="signUp">
+
+  <a href="/"><button class="submit relocate">Sign In</button></a>
+
+  <section class="form-wrap">
+    <h1>Sign Up</h1>
+
+    <span class="error-banner">Please Fill Out All Of The Boxes</span>
+
+    <form class="signup-form form" action="/userData" method="post">
+      <input type="text" class="first-name" placeholder="First Name" name="firstName" />
+
+      <input type="text" class="last-name" placeholder="Last Name" name="lastName"/>
+
+      <input type="text" class="username" placeholder="Username" name="username"/>
+
+      <div class="password-wrap new-password">
+        <input type="password" class="password-input" placeholder="Password" name="password"/>
+        <button type="button" class="see-password-btn">👀</button>
+      </div>
+
+      <button class="signup-btn center submit">Submit</button>
+    </form>
+  </section>
+
+  <script src="main.js"></script>
+</body>
