@@ -26,10 +26,21 @@ app.get('/signup', (req,res) => {
 })
 
 app.post('/userData', (req,res) => {
-    const user = new NewUser(req.body)
+//stackoverflow test
+    const username = req.body.username
 
-    user.save()
-        .then(data => {
-            res.redirect('/')
+    NewUser.findOne({username:username})
+        .then((savedUser) => {
+            if(savedUser) res.render('userAlreadyExists')
+            else createUser()
         })
+//test end
+    function createUser() {
+        const user = new NewUser(req.body)
+
+        user.save()
+            .then(data => {
+             res.redirect('/')
+         })
+    }
 })

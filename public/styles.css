@@ -107,4 +107,12 @@ form {
     transition: all ease-out 100ms;
 }
 
-
+.error-banner {
+    width: 300px;
+    padding: 3px 0;
+    font-size: 1.1rem;
+    background-color: red;
+    color:white;
+    text-align: center;
+    margin-bottom: 10px;
+}
