@@ -26,12 +26,13 @@ app.get('/signup', (req,res) => {
 })
 
 app.post('/userData', (req,res) => {
-//stackoverflow test
-    const {firstName,lastName,username,password} = req.body
 
+    const {firstName,lastName,username,password} = req.body
+//check if all inputs are filled out and render error page if not
     if(!firstName || !lastName || !username || !password) res.render('fillAllInputsErr')
     else checkExistingUsers()
 
+//check database for given username and render error page if username already exists
     function checkExistingUsers(){
         NewUser.findOne({username:username})
          .then((savedUser) => {
@@ -39,7 +40,7 @@ app.post('/userData', (req,res) => {
                 else createUser()
         })
     }
-//test end
+//if there are no conflicts, create a new user in the database
     function createUser() {
         const user = new NewUser(req.body)
 
