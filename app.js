@@ -50,3 +50,7 @@ app.post('/userData', (req,res) => {
          })
     }
 })
+
+app.get('/userProfile', (req,res) => {
+    res.render('userProfile')
+})

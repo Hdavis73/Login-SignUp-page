@@ -116,3 +116,26 @@ form {
     text-align: center;
     margin-bottom: 10px;
 }
+
+.user-info {
+    width: 70%;
+    max-width: 500px;
+    padding: 20px 30px;
+    padding-top: 40px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+}
+
+.user-img {
+    max-width: 200px;
+    align-self: center;
+    position: absolute;
+    top: -163px;
+}
+
+/* @media (max-width: ) */
+
