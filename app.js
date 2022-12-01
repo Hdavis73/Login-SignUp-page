@@ -8,6 +8,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
 const User = require('./models/userInfo')
+// const { findByUsername } = require('./models/userInfo')
 
 const dbUrl = 'mongodb+srv://Hdavis73:Heather1@logininfo.zv7mcrt.mongodb.net/?retryWrites=true&w=majority'
 
@@ -56,12 +57,18 @@ app.post('/userData', (req,res) => {
     }
 })
 
-app.get('/userProfile', (req,res) => {
-    // const {username,password} = req.body
+app.post('/userProfile', (req,res) => {
+    const {username,password} = req.body
+    let userId
 
-    // if( User.findOne({username:username}) == true) console.log('user found')
-    // else console.log('user not found')
+    User.findOne({username:username})
+        .then((userInfo) => {
 
-    // res.redirect('/')
+            if(userInfo) userInfo.password === password ? userId = userInfo._id : console.log('wrong password')
+            else console.log('user does not exist')
+
+        })
+
+    res.redirect('/')
     // res.render('userProfile')
 })
