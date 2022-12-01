@@ -1,8 +1,13 @@
 // const http = require('http')
 const mongoose = require('mongoose')
+// const passportLocalMongoose = require('passport-local-mongoose')
+// const session = require('express-session')
+// const passport = require('passport')
+// const bodyParser = require('body-parser')
+// const connectEnsureLogin = require('connect-ensure-login')
 const express = require('express')
 const app = express()
-const NewUser = require('./models/userInfo')
+const User = require('./models/userInfo')
 
 const dbUrl = 'mongodb+srv://Hdavis73:Heather1@logininfo.zv7mcrt.mongodb.net/?retryWrites=true&w=majority'
 
@@ -34,7 +39,7 @@ app.post('/userData', (req,res) => {
 
 //check database for given username and render error page if username already exists
     function checkExistingUsers(){
-        NewUser.findOne({username:username})
+        User.findOne({username:username})
          .then((savedUser) => {
                 if(savedUser) res.render('userAlreadyExistsErr')
                 else createUser()
@@ -42,7 +47,7 @@ app.post('/userData', (req,res) => {
     }
 //if there are no conflicts, create a new user in the database
     function createUser() {
-        const user = new NewUser(req.body)
+        const user = new User(req.body)
 
         user.save()
             .then(data => {
@@ -52,5 +57,11 @@ app.post('/userData', (req,res) => {
 })
 
 app.get('/userProfile', (req,res) => {
-    res.render('userProfile')
+    // const {username,password} = req.body
+
+    // if( User.findOne({username:username}) == true) console.log('user found')
+    // else console.log('user not found')
+
+    // res.redirect('/')
+    // res.render('userProfile')
 })

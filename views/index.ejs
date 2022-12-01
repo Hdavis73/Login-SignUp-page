@@ -10,15 +10,15 @@
     <section class="signin-wrap form-wrap">
       <h1>Sign In</h1>
 
-      <form action="">
-        <input type="email" class="username" placeholder="Username" />
+      <form action="/userProfile" method="get">
+        <input type="text" class="username" placeholder="Username" name="username"/>
 
         <div class="password-wrap">
-          <input type="password" class="password-input" placeholder="Password" class="password-input" />
+          <input type="password" class="password-input" placeholder="Password" class="password-input" name="password"/>
           <button type="button" class="see-password-btn">👀</button>
         </div>
 
-        <button type="button" class="signin-btn center submit">Submit</button>
+        <button class="signin-btn center submit">Submit</button>
       </form>
     </section>
 
