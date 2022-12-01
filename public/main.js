@@ -14,7 +14,7 @@ seePassword.addEventListener('click', () => {
 })
 
 submitBtn.addEventListener('click', () => {
-    incorrectPassword()
+    // incorrectPassword()
 })
 
 function incorrectPassword() {

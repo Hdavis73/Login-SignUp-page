@@ -64,11 +64,15 @@ app.post('/userProfile', (req,res) => {
     User.findOne({username:username})
         .then((userInfo) => {
 
-            if(userInfo) userInfo.password === password ? userId = userInfo._id : console.log('wrong password')
-            else console.log('user does not exist')
+            if(userInfo) userInfo.password === password ? userId = userInfo._id : res.render('incorrectPassword')
+            else res.render('userDoesNotExistErr')
 
         })
 
-    res.redirect('/')
+    // res.redirect('/')
     // res.render('userProfile')
+})
+
+app.get('/userProfile:id', (req,res) => {
+
 })
