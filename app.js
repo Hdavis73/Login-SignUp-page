@@ -9,6 +9,19 @@ const express = require('express')
 const app = express()
 const User = require('./models/userInfo')
 // const { findByUsername } = require('./models/userInfo')
+// class CurrentUser {
+//     constructor(firstName,lastName,id,username){
+//         this.firstName = firstName,
+//         this.lasName = lastName,
+//         this.username = username,
+//         this.id = id
+//     }
+
+//     userInfo(){
+//         console.log(this)
+//     }
+// }
+
 
 const dbUrl = 'mongodb+srv://Hdavis73:Heather1@logininfo.zv7mcrt.mongodb.net/?retryWrites=true&w=majority'
 
@@ -61,18 +74,54 @@ app.post('/userProfile', (req,res) => {
     const {username,password} = req.body
     let userId
 
+    // let userId
+
     User.findOne({username:username})
         .then((userInfo) => {
+        // const currentUser = new CurrentUser(userInfo.firstName, userInfo.lastName, userInfo._id, userInfo.username)
 
             if(userInfo) userInfo.password === password ? userId = userInfo._id : res.render('incorrectPassword')
+
+            // if(userInfo) {
+            //     if(userInfo.password === password) {
+            //      currentUser
+            //     }
+            //     else res.render('incorrectPassword')
+            // }
             else res.render('userDoesNotExistErr')
 
         })
 
-    // res.redirect('/')
+        res.redirect('/userProfile:id')
     // res.render('userProfile')
 })
 
-app.get('/userProfile:id', (req,res) => {
+// app.get(`/userProfile/:id`,(req,res) => {
+//     // const id = req.query
+//     // CurrentUser.userInfo()
+//     res.render('userProfile')
+//     // console.log(req.query.id)
+// })
 
+app.get('/userProfile',(req,res) => {
+    const username = req.query.username
+    const password = req.query.password
+    let currentUser
+
+
+    User.findOne({username:username})
+    .then((userInfo) => {
+        if(userInfo) {
+
+            currentUser = req.query
+
+           if (userInfo.password === password) res.render('userProfile') 
+           else res.render('incorrectPassword')
+
+        } else res.render('userDoesNotExistErr')
+
+    })
+
+    console.log(req.query)
+    // res.render('userProfile')
 })
