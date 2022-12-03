@@ -80,7 +80,7 @@ app.post('/userProfile', (req,res) => {
         .then((userInfo) => {
         // const currentUser = new CurrentUser(userInfo.firstName, userInfo.lastName, userInfo._id, userInfo.username)
 
-            if(userInfo) userInfo.password === password ? userId = userInfo._id : res.render('incorrectPassword')
+            if(userInfo) userInfo.password === password ? res.redirect('') : res.render('incorrectPassword')
 
             // if(userInfo) {
             //     if(userInfo.password === password) {
@@ -103,6 +103,10 @@ app.post('/userProfile', (req,res) => {
 //     // console.log(req.query.id)
 // })
 
+app.post('/userProfile', (req,res) => {
+
+})
+
 app.get('/userProfile',(req,res) => {
     const username = req.query.username
     const password = req.query.password
@@ -115,7 +119,7 @@ app.get('/userProfile',(req,res) => {
 
             currentUser = req.query
 
-           if (userInfo.password === password) res.render('userProfile') 
+           if (userInfo.password === password) res.render('userProfile',{userInfo: userInfo, title: userInfo.firstName + ' ' + userInfo.lastName}) 
            else res.render('incorrectPassword')
 
         } else res.render('userDoesNotExistErr')
