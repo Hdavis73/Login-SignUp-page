@@ -110,14 +110,10 @@ app.post('/userProfile', (req,res) => {
 app.get('/userProfile',(req,res) => {
     const username = req.query.username
     const password = req.query.password
-    let currentUser
-
 
     User.findOne({username:username})
     .then((userInfo) => {
         if(userInfo) {
-
-            currentUser = req.query
 
            if (userInfo.password === password) res.render('userProfile',{userInfo: userInfo, title: userInfo.firstName + ' ' + userInfo.lastName}) 
            else res.render('incorrectPassword')

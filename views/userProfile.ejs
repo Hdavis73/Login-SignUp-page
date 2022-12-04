@@ -3,7 +3,7 @@
 <%- include('./partials/head.ejs') %>
 
 <body>
-  <section class="user-info">
+  <section class="user-info main-info">
     <img class="user-img" src="/assets/user-img.png" alt="user image" />
 
     <span class="user-info-label">
@@ -12,6 +12,23 @@
     <span class="user-info-label">
       Username: <span class="user-info-text"> <%= userInfo.username %>  </span>
     </span>
+
+   <button class="relocate-style change-password">Change Password</button>
+
+  </section>
+
+  <section class="enter-password-popup user-info hide">
+
+    <form action="">
+        <h3>Enter Current Password To Continue</h2>
+            <div class="password-wrap">
+                <input type="password" class="password-input" placeholder="Password" class="password-input" name="password"/>
+                <button class="relocate-style"> > </button>
+
+                <!-- <button type="button" class="see-password-btn">👀</button> -->
+            </div>
+
+    </form>
   </section>
 
   <script src="main.js"></script>

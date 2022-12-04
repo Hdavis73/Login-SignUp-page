@@ -38,6 +38,10 @@ form {
     gap: 5px;
 }
 
+.hide  {
+    display: none !important;
+}
+
 .form-wrap {
     display: flex;
     flex-direction: column;
@@ -90,10 +94,7 @@ form {
     transform: translate(100px)
 }
 
-.relocate {
-    position: absolute;
-    right: 20px;
-    top: 0px;
+.relocate-style {
     background-color: #f3f1ff;
     color: #340863;
     border: 2px solid #340863;
@@ -101,7 +102,13 @@ form {
     padding: 5px;
 }
 
-.relocate:hover {
+.relocate {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+}
+
+.relocate-style:hover {
     background-color:#340863;
     color:#f3f1ff;
     transition: all ease-out 100ms;
@@ -135,6 +142,29 @@ form {
     align-self: center;
     position: absolute;
     top: -163px;
+}
+
+.change-password {
+    border:none;
+    width: 100%;
+}
+
+.enter-password-popup {
+    /* align-items: center; */
+    padding-top: 0;
+    padding: 40px 50px;
+}
+
+.enter-password-popup h3 {
+    font-size: 1.3rem;
+}
+
+.enter-password-popup input {
+    width: 100%;
+}
+.enter-password-popup button {
+    border-radius: 5px;
+    font-size: 1.3rem;
 }
 
 /* @media (max-width: ) */
