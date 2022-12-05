@@ -125,3 +125,9 @@ app.get('/userProfile',(req,res) => {
     console.log(req.query)
     // res.render('userProfile')
 })
+
+app.get('/changePassword', (req,res) => {
+    const password = req.query.password
+
+    User.findOne()
+})

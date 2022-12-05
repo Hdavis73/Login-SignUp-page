@@ -22,14 +22,15 @@
     <form action="">
         <h3>Enter Current Password To Continue</h2>
             <div class="password-wrap">
-                <input type="password" class="password-input" placeholder="Password" class="password-input" name="password"/>
-                <button class="relocate-style"> > </button>
-
+                <form action="/changePassword" method="get">
+                    <input type="password" class="password-input" placeholder="Password" class="password-input" name="password"/>
+                    <button class="relocate-style"> > </button>
+                </form>
                 <!-- <button type="button" class="see-password-btn">👀</button> -->
             </div>
 
     </form>
   </section>
 
-  <script src="main.js"></script>
+  <script src="Javascript/changePassword.js"></script>
 </body>

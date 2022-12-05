@@ -38,6 +38,10 @@ form {
     gap: 5px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .hide  {
     display: none !important;
 }
@@ -149,10 +153,16 @@ form {
     width: 100%;
 }
 
+.main-info {
+    /* transition: all ease-out 2s; */
+}
+
 .enter-password-popup {
     /* align-items: center; */
     padding-top: 0;
     padding: 40px 50px;
+    /* transition: all ease-in 2s; */
+
 }
 
 .enter-password-popup h3 {
