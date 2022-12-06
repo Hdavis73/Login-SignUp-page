@@ -7,30 +7,40 @@
     <img class="user-img" src="/assets/user-img.png" alt="user image" />
 
     <span class="user-info-label">
-      Name: <span class="user-info-text"> <%= userInfo.firstName + ' ' + userInfo.lastName %>  </span>
+      Name:
+      <span class="user-info-text">
+        <%= userInfo.firstName + ' ' + userInfo.lastName %>
+      </span>
     </span>
     <span class="user-info-label">
-      Username: <span class="user-info-text"> <%= userInfo.username %>  </span>
+      Username:
+      <span class="user-info-text"><%= userInfo.username %></span>
     </span>
 
-   <button class="relocate-style change-password">Change Password</button>
-
+    <button class="relocate-style change-password">Change Password</button>
   </section>
 
   <section class="enter-password-popup user-info hide">
 
-    <form action="">
-        <h3>Enter Current Password To Continue</h2>
-            <div class="password-wrap">
-                <form action="/changePassword" method="get">
-                    <input type="password" class="password-input" placeholder="Password" class="password-input" name="password"/>
-                    <button class="relocate-style"> > </button>
-                </form>
-                <!-- <button type="button" class="see-password-btn">👀</button> -->
-            </div>
+      <h3>Login Again To Continue</h3>
+      <div class="password-wrap">
+        <form action="/changePassword" method="get">
 
-    </form>
+          <input type="text" placeholder="Username" name="username">
+
+          <input
+            type="password"
+            class="password-input"
+            placeholder="Password"
+            class="password-input"
+            name="password"
+          />
+
+          <button class="relocate-style">Login</button>
+        </form>
+        <!-- <button type="button" class="see-password-btn">👀</button> -->
+      </div>
   </section>
 
-  <script src="Javascript/changePassword.js"></script>
+  <script src="Javascript/changePasswordJS.js"></script>
 </body>

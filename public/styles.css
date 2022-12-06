@@ -153,12 +153,8 @@ button {
     width: 100%;
 }
 
-.main-info {
-    /* transition: all ease-out 2s; */
-}
-
 .enter-password-popup {
-    /* align-items: center; */
+    align-items: center;
     padding-top: 0;
     padding: 40px 50px;
     /* transition: all ease-in 2s; */
@@ -169,12 +165,17 @@ button {
     font-size: 1.3rem;
 }
 
-.enter-password-popup input {
-    width: 100%;
-}
 .enter-password-popup button {
     border-radius: 5px;
     font-size: 1.3rem;
+}
+
+
+
+.change-password-wrap h2 {
+    font-size: 1.8rem;
+    margin-left: 12%;
+    margin-bottom: 20px;
 }
 
 /* @media (max-width: ) */

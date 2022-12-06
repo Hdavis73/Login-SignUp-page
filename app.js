@@ -127,7 +127,12 @@ app.get('/userProfile',(req,res) => {
 })
 
 app.get('/changePassword', (req,res) => {
+    const username = req.query.username
     const password = req.query.password
 
-    User.findOne()
+    User.findOne({ username:username })
+        .then((userInfo) => {
+            if(userInfo.password === password) res.render('changePassword')
+            else console.log('incorrect password')
+        })
 })
